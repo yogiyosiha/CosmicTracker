@@ -105,7 +105,51 @@ const completeCosmicMap = [
 
 window.onload = function() {
     buildCosmicMap();
+    loadSavedData();
 };
+
+function saveToLocalStorage() {
+    const savedData = {
+        startWeight: document.getElementById('startWeight').value,
+        currentWeight: document.getElementById('currentWeight').value,
+        goalWeight: document.getElementById('goalWeight').value
+    };
+
+    try {
+        localStorage.setItem('cosmicWeightTracker', JSON.stringify(savedData));
+    } catch (error) {
+        document.getElementById('stats').innerText =
+            'Unable to save your data in this browser. Check your storage settings.';
+    }
+}
+
+function loadSavedData() {
+    try {
+        const savedData = localStorage.getItem('cosmicWeightTracker');
+        if (!savedData) return;
+
+        const weights = JSON.parse(savedData);
+        if (
+            !weights ||
+            typeof weights.startWeight !== 'string' ||
+            typeof weights.currentWeight !== 'string' ||
+            typeof weights.goalWeight !== 'string'
+        ) {
+            throw new Error('Saved weight data has an invalid format.');
+        }
+
+        document.getElementById('startWeight').value = weights.startWeight;
+        document.getElementById('currentWeight').value = weights.currentWeight;
+        document.getElementById('goalWeight').value = weights.goalWeight;
+
+        if (weights.startWeight && weights.currentWeight && weights.goalWeight) {
+            updateJourney();
+        }
+    } catch (error) {
+        document.getElementById('stats').innerText =
+            'Unable to load saved data. Please check your browser storage settings.';
+    }
+}
 
 function buildCosmicMap() {
     const map = document.getElementById('spaceMap');
