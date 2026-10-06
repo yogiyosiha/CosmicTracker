@@ -1,11 +1,17 @@
 /* Core Page Theme */
 body {
     background-color: #05050a;
+    background-image: linear-gradient(rgba(5, 5, 10, 0.35), rgba(5, 5, 10, 0.35)), url("assets/cosmictrackerbackground.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #c5c6c7;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     padding: 40px 20px;
+    margin: 0;
+    min-height: 100vh;
 }
 
 .container {
