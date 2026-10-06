@@ -1,7 +1,7 @@
 /* Core Page Theme */
 body {
     background-color: #05050a;
-    background-image: linear-gradient(rgba(5, 5, 10, 0.35), rgba(5, 5, 10, 0.35)), url("assets/cosmictrackerbackground.png");
+    background-image: linear-gradient(rgba(5, 5, 10, 0.35), rgba(5, 5, 10, 0.35)), url("assets/cosmictrackerbackground.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
