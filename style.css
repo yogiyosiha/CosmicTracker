@@ -1,0 +1,217 @@
+/* Core Page Theme */
+body {
+    background-color: #05050a;
+    color: #c5c6c7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 { 
+    color: #66fcf1; 
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.3); 
+}
+
+/* User Input Panel */
+.form-group {
+    background: #111424;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #1f2833;
+    margin-bottom: 30px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-row div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label { 
+    font-size: 13px; 
+    margin-bottom: 5px; 
+    color: #a4b0be; 
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #45f3ff;
+    background: #05050a;
+    color: #fff;
+    border-radius: 6px;
+    width: 110px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #45f3ff;
+    color: #05050a;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(69, 243, 255, 0.4);
+    transition: transform 0.2s;
+}
+
+button:hover { 
+    transform: scale(1.03); 
+}
+
+.stats-box {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #fff;
+    background: rgba(69, 243, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Vertical Space Map Container */
+.space-map {
+    position: relative;
+    background: linear-gradient(to bottom, #1b263b 0%, #0d1b2a 50%, #020205 100%);
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 40px 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; 
+}
+
+/* Central Flight Line Track */
+.cosmic-line {
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(to bottom, #45f3ff, #ff007f, #7928ca);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* General Milestone Mechanics */
+.milestone {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Alternating Layout Patterns (Left / Right Alignment) */
+.milestone:nth-child(even) { 
+    flex-direction: row; 
+    justify-content: flex-start; 
+    text-align: right; 
+    padding-right: 53%; 
+    width: 47%;
+}
+.milestone:nth-child(odd) { 
+    flex-direction: row-reverse; 
+    justify-content: flex-start; 
+    text-align: left; 
+    padding-left: 53%; 
+    width: 47%;
+}
+
+/* Major Node Settings */
+.major-milestone {
+    opacity: 0.2;
+    transform: scale(1);
+}
+.major-milestone.reached {
+    opacity: 1;
+    transform: scale(1.08);
+}
+.icon { 
+    font-size: 28px; 
+    margin: 0 15px; 
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); 
+}
+.major-milestone.reached .icon { 
+    filter: drop-shadow(0 0 10px #45f3ff); 
+}
+.info { 
+    display: flex; 
+    flex-direction: column; 
+}
+.name { 
+    font-weight: bold; 
+    color: #fff; 
+    font-size: 15px; 
+}
+.distance { 
+    font-size: 11px; 
+    color: #8b9bb4; 
+}
+
+/* Intermediate Star Node Settings */
+.mini-star {
+    opacity: 0.1;
+}
+.mini-star.reached {
+    opacity: 0.7;
+}
+.icon-mini {
+    font-size: 12px;
+    margin: 0 23px;
+    color: #ffd700;
+}
+.mini-star.reached .icon-mini {
+    filter: drop-shadow(0 0 6px #ffd700);
+    animation: twinkle 1.5s infinite alternate;
+}
+.name-mini {
+    font-size: 12px;
+    font-weight: 500;
+    color: #505d74;
+}
+.distance-mini {
+    font-size: 10px;
+    color: #414b5c;
+}
+.mini-star.reached .name-mini {
+    color: #a5b4fc;
+}
+.mini-star.reached .distance-mini {
+    color: #718096;
+}
+
+/* Rocket Config */
+.spaceship {
+    position: absolute;
+    left: 50%;
+    font-size: 32px;
+    transform: translate(-50%, -50%) rotate(135deg); /* Facing Downward */
+    z-index: 3;
+    transition: top 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    top: 40px; 
+    filter: drop-shadow(0 0 8px #45f3ff);
+}
+
+/* Animations */
+@keyframes twinkle {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.3); opacity: 1; }
+}
