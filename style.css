@@ -128,19 +128,17 @@ button:hover {
 /* Alternating Layout Patterns (Left / Right Alignment) */
 .milestone:nth-child(even) { 
     flex-direction: row; 
-    justify-content: flex-end; 
+    justify-content: flex-start; 
     text-align: right; 
     padding-right: 53%; 
-    width: 100%;
-    box-sizing: border-box;
+    width: 47%;
 }
 .milestone:nth-child(odd) { 
     flex-direction: row-reverse; 
     justify-content: flex-start; 
     text-align: left; 
     padding-left: 53%; 
-    width: 100%;
-    box-sizing: border-box;
+    width: 47%;
 }
 
 /* Major Node Settings */
@@ -216,24 +214,6 @@ button:hover {
     transition: top 1.2s cubic-bezier(0.25, 1, 0.5, 1);
     top: 40px; 
     filter: drop-shadow(0 0 8px #45f3ff);
-}
-
-@media (max-width: 480px) {
-    .milestone:nth-child(even) {
-        padding-right: 50%;
-    }
-
-    .milestone:nth-child(odd) {
-        padding-left: 50%;
-    }
-
-    .icon {
-        margin: 0 8px;
-    }
-
-    .icon-mini {
-        margin: 0 12px;
-    }
 }
 
 /* Animations */
